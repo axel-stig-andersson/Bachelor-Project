@@ -1,0 +1,43 @@
+-- SQLite
+/*
+if exists verkar inte fungera atm men creata gärna fler entites och
+om tiden finns, lägg de under grön text ifall vi behöver droppa
+
+
+CREATE TABLE sneakers(
+sneakersID INT AUTO_INCREMENT,
+gender VARCHAR(20),
+size INT,
+condition VARCHAR(75),
+priceclass VARCHAR(75),
+PRIMARY KEY(sneakersID)
+);
+
+
+INSERT INTO sneakers(sneakersID, gender, size, condition,priceclass)
+VALUES(
+1,
+'kid',
+34,
+'mint',
+'expensive');
+
+
+
+*/
+
+SELECT *
+FROM user; 
+
+SELECT *
+FROM sneaker; 
+
+SELECT *
+FROM cart; 
+
+SELECT *
+FROM carted_sneaker; 
+
+SELECT *
+FROM orderz;
+

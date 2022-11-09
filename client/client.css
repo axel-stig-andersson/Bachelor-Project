@@ -1,0 +1,1030 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,300;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,300;1,500;1,600&family=Montserrat:ital,wght@0,200;0,400;0,500;1,200;1,300&display=swap');
+
+/* Generella saker */
+body {
+    /* Blått tema a*/
+    background-color: #E5E7E9;
+
+    /* Blått tema b*/
+    /* background-color: #DFF6FF; */
+    /* background-color: #87CEFA; */
+    
+
+    /* Rött tema */
+    /* background-color: #ffe3e0; */
+
+    /* Grönt tema */
+    /* background-color: #e9f5db; */
+
+    width: 100vw;
+}
+
+.titlefont {
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+.textfont {
+    font-family: 'Montserrat', sans-serif;
+}
+.text{
+
+    position: relative;
+    top: 30%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+#main_title_frontpage  {
+    font-weight: bold;
+    font-weight: 500;
+    position: relative;
+
+}
+
+#text_frontpage {
+    font-weight: 400;
+    position: relative;
+}
+
+a {
+    text-decoration: none !important;
+    background-color: transparent; 
+    /* Blått tema a */
+    color: #6E8898; 
+    
+    /* Blått tema b */
+    /* color: #5D8BF4;  */
+
+    /* Grönt tema */
+    /* color: #588157;  */
+
+    /* Rött tema */
+    /* color: #B23A48;  */
+    
+}
+
+a:hover{
+    /* Blått tema a*/
+    color: #2E5266;
+
+    /* Blått tema b*/
+    /* color: #051367; */
+
+    /* Grönt tema */
+    /* color: #464E2E;  */
+
+    /* Rött tema */
+    /* color: #8C2F39;  */
+  
+}
+
+/* Colors Färger */
+
+/* Bakgrundsfärgen */
+.color0{
+
+    /* Blått tema a */
+    background-color: #E5E7E9;
+
+    /* Blått tema b */
+    /* background-color: #DFF6FF; */
+
+    /* Rött tema */
+    /* background-color: #ffe3e0; */
+
+    /* Grönt tema */
+    /* background-color: #e9f5db; */
+   
+
+}
+
+/* Textfärg Ljus - på knappar*/
+.color1{
+    /* Blått tema */
+    color: #D3D0CB; 
+    
+    /* Grönt tema */
+    /* color: #DAD7CD; */
+
+    /* Rött tema */
+    /* color: #FED0BB */
+   
+}
+
+/* Textfärg Mörk */
+.color6{
+    /* Blått tema a*/
+    color: #2E5266;
+
+    /* Blått tema b */
+    /* color: #051367;  */
+
+    /* Grönt tema */
+    /* color: #344E41; */
+
+    /* Rött tema */
+    /* color: #8C2F39;  */
+
+}
+
+/* Mörk Detaljfärg */
+.color2{
+    
+    /* Blått tema a*/
+    background-color: #5D7583;
+    border-color: #5D7583;
+
+    /* Blått tema b*/
+    /* background-color: #2D31FA;
+    border-color: #2D31FA; */
+
+    /* Grönt tema */
+    /* background-color: #3A5A40;
+    border-color: #3A5A40; */
+
+    /* Rött tema */
+    /* background-color: #461220;
+    border-color: #461220; */
+    
+    
+} 
+
+/* Ljus Detaljfärg */
+.color3{
+    /* Blått tema a*/
+    background-color: #9FB1BC;
+    border-color: #9FB1BC;
+
+    /* Blått tema b*/
+    /* background-color: #5D8BF4;
+    border-color: #5D8BF4; */
+    
+    
+
+    /* Grönt tema */
+   /* background-color: #A3B18A; */
+
+   /* Rött tema */
+   /* border-color: #FCB9B2; 
+   background-color: #FCB9B2; */
+
+}
+
+/* Vit text */
+.color4{
+    color: white;
+}
+
+/* Bakgrund */
+.color5{
+    background-color: white;
+}
+
+
+
+/*Header på toppen av sidan med lite info*/
+
+.top-header {
+    width: 100vw;
+}
+
+#headerText {
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 11px;
+}
+
+.logo-image{
+    height: 6vh;
+    aspect-ratio: 1;
+}
+
+.logo-footprint {
+    width: 100%; 
+    height: 100%; 
+}
+
+.team_picture:hover {
+    opacity: 80%;
+}
+
+.logo-footprint:hover {
+    transform: rotate(45deg);
+
+}
+
+.customer_button:hover {
+    font-size: 70;
+    font-style: bold;
+    font-weight: 500;
+}
+
+
+.logo-shopping {
+    width: 100%; 
+    height: 100%; 
+}
+
+.customer_button {
+    font-size: 20px;
+}
+
+#navbar {
+    width: 100vw;
+    padding-right: 3vw;
+    height: 10vh;
+}
+
+/* Header på toppen tar slut */
+
+/* Contact Us View*/
+
+#contact-form {
+    position:center;
+    margin-left: 25%;
+    margin-right: 10%;
+}
+
+#contact-info {
+    position: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 5%;
+}
+
+#contact-title {
+    padding-top: 1%;
+}
+
+#contact-subject {
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+#learn-more {
+    padding-top: 1%;
+    padding-bottom: 2%;
+    
+}
+
+#line-contact {
+    border-left: 6px solid #051367;
+    height: auto;
+    width: 6px;
+    line-height: 10px;
+}
+
+#story-contact-div {
+    border-left: 6px solid #051367;
+    height: auto;
+    margin: 0 auto;
+    line-height: 10px;
+}
+
+
+#team-contact {
+    position:relative;
+    width: 50%;
+    height: auto;
+    margin-left: 50%;
+    border-radius: 15%;
+    overflow: hidden;
+}
+
+#team-contact:hover {
+    position:relative;
+    width: 50%;
+    height: auto;
+    margin-left: 50%;
+    border-radius: 15%;
+    overflow: hidden;
+    opacity: 80%;
+    cursor: pointer;
+}
+
+#story-contact {
+    position:relative;
+    width: 50%;
+    height: auto;
+    border-radius: 15%;
+    overflow: hidden;
+}
+
+#story-contact:hover {
+    position:relative;
+    width: 50%;
+    height: auto;
+    border-radius: 15%;
+    overflow: hidden;
+    opacity: 80%;
+    cursor: pointer;
+}
+
+/* Contact us tar slut */
+
+/* Register view */
+
+#registerBox {
+    position: relative;
+    top: 50px; 
+    
+}
+
+#registerCheckbox{
+    position: relative;
+    margin:7px 4px;
+}
+
+/* Register view slut */
+
+/*Bottom panel, make it stick, positionering av text etc*/
+#bottom_panel {
+    position: absolute;
+    width:  100%;
+    height: 220px;
+    bottom: -1000px;
+    padding-top: 30px;
+    padding-left: 160px;
+
+}
+#floatingcolumn-head {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+}
+
+#listcontainer {
+    
+    position:relative;
+    width:900px;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 20px;
+    align-content: center;
+}
+
+#listcontainer ul {
+    width:290px;
+    float:left;
+    color:FFF;
+}
+
+
+footer {
+    position: absolute;
+    width: 100%;
+    height: 63px;
+    bottom: -1060px;
+    text-align: center;
+    line-height: 60px;
+    font-size: small;
+}
+/* Bottom panel slut */
+
+/*Log in vy*/
+
+#login_container {
+    margin-left: 35vw;
+    width: 30vw;
+    margin-right: 35vw;
+}
+
+#login-logo-footprint {
+    width: 40%;
+    height: 40%;
+    display: block;
+    margin: auto;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+/* Log in vy slut */
+
+/*Start shopping sida */
+#applyNowButton{
+    margin-top: 3%;
+    margin-left: 7%;
+}
+
+#brandFilter, #colorFilter, #modelFilter, #sizeFilter, #conditionFilter{
+    padding: 0px;
+    position: inherit;
+}
+
+#filter-card {
+    padding: 20px;
+}
+
+#sneakerCard {
+    height: dynamic;
+}
+
+.sorting_label {
+   float: right;
+ }
+
+ .center {
+     margin: auto;
+     width: 60%;
+     padding: 10px;
+
+       
+}
+
+/*Slut shopping sida*/
+
+/*Shipping sida - cards layout*/
+
+#shipping_card {
+    position: center;
+    border-radius: 30px;
+}
+
+/* Front page / startsida start */
+
+
+/* Knappar framsida */
+.buttons {
+    width: 40%; 
+    display: inline;
+    }
+    
+        .action_btn {
+    width: 30%;
+    height: 15%;
+    display: inline;
+    margin-top: 15%;
+    color: white;
+    
+}
+        #btn_home_login{
+            border-top-left-radius:15px;
+            border-bottom-left-radius:15px; 
+        }
+        #btn_home_register{
+            border-top-right-radius:15px;
+            border-bottom-right-radius:15px;
+        }
+        #btn_home_findoutmore{
+            border-top-right-radius:15px;
+            border-bottom-right-radius:15px;
+            border-top-left-radius:15px;
+            border-bottom-left-radius:15px;
+            width: 60%;
+            margin-top: 0%; 
+        }
+        #btn_home_account{
+            border-top-right-radius:15px;
+            border-bottom-right-radius:15px;
+            border-top-left-radius:15px;
+            border-bottom-left-radius:15px;
+            width: 60%;
+            margin-top: 10%; 
+        }
+        #text_home_findoutmore{
+            margin-top: 12%; 
+        }
+        .btn_text_home{
+            font-style: bold;
+            font-size: 24px;
+        }
+
+
+/*Flexboxar - start page boxarna*/
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: auto;
+}
+
+.boxclass {
+    text-align: center;
+    vertical-align: middle;
+    flex-grow: 1;
+    width: 38%;
+    height: 20vw;
+}
+/* Slut på boxarna */
+
+
+#main_title_frontpage  {
+    font-weight: bold;
+    position: relative;
+}
+
+#text_frontpage {
+    font-size: large;
+    position: relative;
+}
+.frontpage_image {
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width:  23.5vw;
+    aspect-ratio: 1.8;
+    border-radius: 15%;
+}
+
+/* Startsida slut */
+
+/* shopping cart page*/
+
+#sidebar {
+    width: 20%;
+    padding: 20px;
+    float: left
+}
+
+#card-img-top {
+    width: 100%;
+    height: 30vh;
+    overflow: hidden;
+}
+
+#products {
+    width: 80%;
+    height: 90vh;
+    padding: 10px;
+    margin: 0;
+    float: right;
+    overflow: auto;
+}
+
+.addcart-button {
+
+   position: absolute;
+   bottom: 20px;
+   right: 22%;
+   margin:auto;
+   display:block;
+}
+
+#add-btn-div {
+    padding-top: 10px;
+}
+
+#total_price {
+    text-align: right;
+    margin-top: 2%;
+    margin-left: 1%;
+}
+
+#cart-button {
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* Shopping cart slut */
+
+/* Account vyn*/
+#Account_div{
+    clear: both;
+    content: "";
+    display: table;
+    width: 100vw;
+    height: 100vh ;
+}
+
+#Account_left{
+    margin-top: 1%;
+    float: left;
+    width: 38%;
+    height: 90%;
+    margin-left: 1%;
+    margin-right: 0.5%;
+    border-radius: 30px;
+}
+
+#Account_middle{
+    margin-top: 1%;
+    float: left;
+    width: 20%;
+    height: 100vh;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    border-radius: 30px;
+}
+
+#Account_right{
+    margin-top: 1%;
+    float: left;
+    width: 38%;
+    height: 90vh;
+    margin-left: 0.5%;
+    margin-right: 1%;
+    border-radius: 30px;
+}
+
+.account_middle_buttons{
+    height: 15%;
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 5%;
+    border-color: transparent;
+}
+
+/* #profile_pic{ */
+    /* margin-left: 35%; */
+    /* margin-right: 35%; */
+    /* margin-top: 5%;
+    margin-bottom: 0%;
+    width: 30%;
+    height: width;
+    border-radius: 50%;
+
+} */
+
+#account_view_name_text{
+    font-size: 6vh;
+    text-align: center;
+    margin: 0%;
+    font-style: bold;
+}
+
+#Account_left_sub{
+    border-radius: 15px;
+    margin: 5%;
+    height: 30%;
+}
+
+#Account_right_sub{
+    border-radius: 15px;
+    margin: 5%;
+    height: 94.5%;
+}
+
+#annonsListaDiv{
+    overflow-y: scroll;
+    height: 95%;
+}
+
+#edit_profile_button{
+    height: 20%;
+    width: 80%;
+    border-radius: 15px;
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-color: transparent;
+    position: relative;
+    bottom: -60%;
+}
+
+.account_button_logo{
+    height: 40%;
+    width: height;
+}
+
+.account_button_text{
+    font-size: 3vh;
+    font-style: bold;
+}
+
+#editProfileModalButton{
+    height: 13%;
+    width: 80%;
+    border-radius: 15px;
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-color: transparent; 
+}
+
+#annonsLista{
+    width: 100%;
+    height: 90%;
+    overflow: auto;
+}
+
+.sellerAds{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    border-radius: 20px;
+    display: block;
+    width: 90%;
+    float: left;
+}
+
+.sellerAdsDiv{
+    float: left;
+    width: 25%;
+    margin-left: 2.5%;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+}
+
+#sellerAdsDivRight{
+    float: left;
+    width: 40%;
+    height: 100%;
+    margin-left: 2.5%;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+}
+
+.sellerAdsText{
+    text-align: left;
+}
+
+.sellerAdsImage{
+    border-radius: 50%;
+    width: 100%;
+    aspect-ratio: 1;
+}
+
+a {
+    text-decoration: none !important;
+    background-color: transparent; 
+}
+
+.card-header {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+}
+
+.icon-control {
+    margin-top: 6px;
+    float: right;
+    font-size: 80%; 
+}
+
+/* The team page*/
+#coworker {
+    width: 100%;
+    padding: 1%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.team_picture {
+
+    width: 100%;
+    height: 65%;
+
+}
+
+
+
+/* Our Story page och reciept page*/
+.grey_box {
+
+/* Grön */
+/* border-left-color: #344E41; */
+
+/* Blå a*/
+/* border-left-color: #2E5266; */
+
+/* Blå b*/
+/* border-left-color: #051367; */
+
+/* Röd */
+/* border-left-color: #8C2F39; */
+
+    border-left: 3px solid #2E5266; 
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+    margin: 0 auto;
+    letter-spacing: 0.2px;
+    position: relative;
+    line-height: 1.4em;
+    font-size: 1.03em;
+    padding: 5%;
+    list-style: none;
+    text-align: left;
+    max-width: 40%;
+}
+
+@media (max-width: 767px) {
+    .timeline {
+        max-width: 98%;
+        padding: 25px;
+    }
+}
+
+.timeline h1 {
+    font-weight: 300;
+    font-size: 1.4em;
+   
+}
+
+.timeline h2,
+.timeline h3 {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 1%;
+
+    
+}
+
+.timeline .event {
+    border-bottom: 1px dashed #e8ebf1;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.timeline .event:before,
+.timeline .event:after {
+    position: absolute;
+    display: block;
+    top: 0;
+}
+
+.timeline .event:before {
+    left: -207px;
+    content: attr(data-date);
+    text-align: right;
+    font-weight: 100;
+    font-size: 0.9em;
+    min-width: 120px;
+}
+
+@media (max-width: 767px) {
+    .timeline .event:before {
+        left: 0px;
+        text-align: left;
+    }
+}
+
+/* Prickarna vid sidan av tidslinjen */
+.timeline .event:after {
+    /* Grön */
+    /* -webkit-box-shadow:#344E41; 
+    box-shadow: #344E41; */
+
+    /* Blå a*/
+    /* -webkit-box-shadow:#2E5266; 
+    box-shadow: #2E5266; */
+
+    /* Blå b*/
+    /* -webkit-box-shadow:#051367; 
+    box-shadow: #051367; */
+
+
+    
+
+    /* Röd */
+    /* -webkit-box-shadow:#8C2F39; 
+    box-shadow: #8C2F39; */
+
+    -webkit-box-shadow: 0 0 0 3px #2E5266; 
+    box-shadow: 0 0 0 3px #2E5266;
+    left: -55.8px;
+    background: #DFF6FF;
+    border-radius: 50%;
+    height: 9px;
+    width: 9px;
+    content: "";
+    top: 5px;
+}
+
+@media (max-width: 767px) {
+    .timeline .event:after {
+        left: -31.8px;
+    }
+}
+
+#title_story {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 30px; 
+    padding-bottom: 20px;
+}
+
+/* slut på our-story page */
+
+
+/* start sell page */
+#sell_div{
+    margin-left: 30%;
+    margin-right:30%;
+    margin-top: 0.5%;
+    height: auto;
+    border-radius: 30px;
+    
+}
+
+.sell_div_items{
+   padding-left: 14vw; 
+}
+
+.sell_inputs{
+    border-radius: 15px;
+    border: none;
+    font-size: auto;
+    margin-top: 1vw;
+    outline: 0;
+}
+
+.sell_label{
+    font-size: 115%;
+    align-content: left;
+    margin-top: 0px;
+} 
+#sell_header{
+    margin-left: 11vw;
+    padding-top: 1%;
+}
+/* slut på sell page */
+
+
+/* Payment */
+#payment-form {
+    margin-left:50%;
+    transform: translate(-50%);
+    width: 30vw;
+    min-width: 500px;
+    align-self: center;
+    box-shadow: 0px 0px 0px 0.5px rgba(50, 50, 93, 0.1),
+      0px 2px 5px 0px rgba(50, 50, 93, 0.1), 0px 1px 1.5px 0px rgba(0, 0, 0, 0.07);
+    border-radius: 7px;
+    padding: 40px;
+  }
+  
+  .hidden2 {
+    display: none;
+  }
+  
+  #payment-message {
+    color: rgb(105, 115, 134);
+    font-size: 16px;
+    line-height: 20px;
+    padding-top: 12px;
+    text-align: center;
+  }
+  
+  #payment-element {
+    margin-bottom: 24px;
+  }
+  
+  /* Buttons and links */
+  #submit {
+    /* background: #5469d4;
+    font-family: Arial, sans-serif; */
+    color: #ffffff;
+    border-radius: 4px;
+    border: 0;
+    padding: 12px 16px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: block;
+    transition: all 0.2s ease;
+    box-shadow: 0px 4px 5.5px 0px rgba(0, 0, 0, 0.07);
+    width: 100%;
+  }
+  #submit:hover {
+    filter: contrast(115%);
+  }
+  #submit:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+  
+  
+  @-webkit-keyframes loading {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes loading {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    #payment-form {
+      width: 80vw;
+      min-width: initial;
+    }
+  }
+  
+
+
+
+

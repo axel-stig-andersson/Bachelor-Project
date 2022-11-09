@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="client.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <title>FootPrint</title>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+  <script src="client.js"></script>
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="stripe_checkout.js" defer></script>
+
+</head>
+
+<body>
+
+  <!--Header-->
+  <div header class="top-header" id="headerTop">
+    <p id="headerText" class="textfont color3 color4"> <img src="images/Icons/shipping_white.png"> Free shipping over
+      500kr with code FREESHIP22.
+      <img src="images/Icons/lock.png"> Safe Payments.
+    </p>
+  </div>
+
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
+
+    <!-- Logotype i navbar -->
+    <a class="navbar-brand" href="#">
+      <div class="logo-image">
+        <img src="images/Icons/logotype_no_background.png" onclick="showHome()" class="logo-footprint">
+      </div>
+    </a>
+
+    <!-- Knapparna till men/women/kids -->
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbar_categories">
+      <ul class="navbar-nav ml-auto">
+
+        <li class="customer_button" id="customer_button">
+          <a class="shop textfont" id="women" href="#">Women &nbsp;<span class="sr-only">(current)</span></a>
+        </li>
+        <p> </p>
+
+        <li class="customer_button" id="customer_button">
+          <a class="shop textfont" id="men" href="#">Men &nbsp;<span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="customer_button" id="customer_button">
+          <a class="shop textfont" id="kids" href="#">Kids &nbsp;<span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+
+      <!-- Knapparna med ikoner till höger i navbar-->
+
+      <div class="collapse navbar-collapse" id="navbar_shopping">
+        <ul class="navbar-nav ml-auto">
+
+          <li class="shopping_button">
+            <a class="nav-link" id="sell" href="#">
+              <div class="logo-image">
+                <img src="images/Icons/sell.png" class="logo-shopping" onclick="showSell()">
+              </div>
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+
+          <li class="shopping_button">
+            <a class="nav-link" id="log_in" href="#">
+              <div class="logo-image">
+                <img src="images/Icons/login.png" onclick="loginVSAccount()" class="logo-shopping">
+              </div>
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+
+
+          <li class="shopping_button" id="qqq">
+            <a class="nav-link" id="shopping_cart" href="#">
+              <div class="logo-image">
+                <img src="images/Icons/shopping_cart.png" class="logo-shopping" onclick="showCart()">
+              </div>
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+
+  </nav>
+
+
+  <!-- Container för vyer  " -->
+  <div id="container">
+
+  </div>
+
+  <script id="view_home" type="text/html">
+
+    <!-- Slideshow -->
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width: 100vw; height: 200px;">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+
+
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="images/Design/slide_blue_1.png" alt="First slide">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="textfont">NEWS THIS WEEK</h5>
+          <p class="textfont">Find your sneakers at FootPrint today - just one click away from new, preowned, sneakers.</p>
+        </div>
+
+      </div>
+
+      <div class="carousel-item">
+        <video class="d-block w-100" muted loop autoplay>
+          <source src="images/Design/slide_movie.mp4" type="video/mp4">
+          <source src="movie.ogg" type="video/ogg">
+          Your browser does not support the video tag.
+        </video>
+
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="textfont">NEWS THIS WEEK</h5>
+          <p class="textfont">Find your sneakers at FootPrint today - just one click away from new, preowned, sneakers.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="images/Design/slide_grey_1.png" alt="Second slide">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="textfont">CHECK OUT THIS WEEKS NEW SNEAKERS</h5>
+          <p class="textfont">Sustainability & fashion in one place.</p>
+        </div>
+
+      </div>
+
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+
+  <!-- Flexbox - hanterar alla rutorna på första raden-->
+  <div class="flex-container">
+    <!-- Första boxen - text -->
+    <div class="boxclass">
+      <h2 class="text titlefont color6" id="main_title_frontpage">Second-hand shoes</h2>
+      <h2 class="text titlefont color6" id="title_frontpage">First hand experience</h2>
+      <p class="text textfont color6" id="text_frontpage">Run towards a sustainable future!</p>
+    </div>
+    <!--Andra boxen - bild  -->
+    <div class="boxclass">
+      <img src="images/Design/sneakers_frontpage1.jpg" class="frontpage_image">
+    </div>
+  </div>
+  <!-- Flexbox - hanterar alla rutorna på andra raden-->
+  <div class="flex-container">
+    <div class="boxclass">
+      <img src="images/Design/sneakers_frontpage2.jpg" class="frontpage_image">
+    </div>
+    <div class="boxclass">
+
+      <!-- box för knappar på andra raden-->
+      <div class="buttons" id="btns_home_login">
+        <h2 class="text titlefont color6" id="title_frontpage">Log in for a better experience</h2>
+        <div class="action_btn">
+          <button name="submit" id="btn_home_login" class="action_btn submit color6 color3" type="submit" value="Save"
+            onclick="showLogInView()">
+            <p class="btn_text_home textfont color6">Log in</p>
+          </button>
+          <button name="submit" id="btn_home_register" class="action_btn cancel color6 color3" type="submit"
+            value="Cancel" onclick="showRegisterView()">
+            <p class="btn_text_home textfont color6">Sign up</p>
+          </button>
+        </div>
+      </div>
+
+      <div class="buttons" id="btns_home_account">
+        <h2 class="text titlefont color6" id="title_frontpage">See account for more information</h2>
+        <div class="action_btn">
+          <button name="submit" id="btn_home_account" class="action_btn submit color6 color3" type="submit" value="Save"
+            onclick="showAccount()">
+            <p class="btn_text_home textfont color6">Show account</p>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- Flexbox - hanterar alla rutorna på tredje raden-->
+  <div class="flex-container">
+    <div class="boxclass">
+      <h2 class="text titlefont color6" id="title_frontpage">Rehome your shoes</h2>
+      <p id="text_home_findoutmore" class="textfont color6">Giving your shoes a second chance is good for the
+        environment and your
+        wallet</p>
+      <button name="submit" id="btn_home_findoutmore" class="action_btn submit color6 color3" type="submit"
+        value="Save">
+        <p class="btn_text_home textfont color6">Find out more</p>
+      </button>
+    </div>
+    <div class="boxclass">
+      <img src="images/Design/sneakers_frontpage3.jpg" class="frontpage_image">
+    </div>
+  </div>
+  </script>
+
+  <script id="view_story" type="text/html">
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+
+        <div class="color0">
+          <h6 class="titlefont color6" id="title_story"> Our story </h6>
+
+          <div id="content">
+            <ul class="timeline grey_box color3">
+              <li class="event" data-date="January 2022">
+                <h3 class="textfont color6">Christoph had a brilliant idea</h3>
+                <p class="textfont color6"> He called his friend Filip who was just as excited</p>
+              </li>
+              <li class="event" data-date="February 2022">
+                <h3 class="textfont color6">The group met</h3>
+                <p class="textfont color6">Christoph and Filip called some of their nerd friends and they met at a small
+                  cafe in
+                  Prague to present their business idea </p>
+              </li>
+              <li class="event" data-date="March 2022">
+                <h3 class="textfont color6">The company was founded</h3>
+                <p class="textfont color6">The company was registrated and FootPrint AB was founded</p>
+              </li>
+              <li class="event" data-date="June 2022">
+                <h3 class="textfont color6">Major milestone</h3>
+                <p class="textfont color6"> Just one month after its launching, FootPrint AB is the worlds leading
+                  reseller of
+                  second-hand sneakers. Creating opporunities to staying in trend while walking
+                  towards a sustainable future!</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </script>
+
+  <!-- Shopping page (men/women/kids)-->
+  <script id="view_shop" type="text/html">
+  <!-- Omslagsbild (men/women/kids) ska vara dynamisk sen-->
+  
+  <img class="card-img-top" src="images/Design/womens_page.png" alt="..." id="categoryWomensPic" />
+  <img class="card-img-top" src="images/Design/mens_page.png" alt="..." id="categoryMensPic" />
+  <img class="card-img-top" src="images/Design/kids_page.png" alt="..." id="categoryKidsPic" />
+
+  <section>
+
+    <div class="container px-4 px-lg-5 mt-5" id="products">
+      <!-- Sorting alternatives -->
+      <div class="sorting">
+        <select id="sortingFilter" class="sorting_label textfont color6">
+          <option value="HighestToLowest" id="highToLow">Highest to lowest</option>
+          <option value="LowestToHighest" id="lowToHigh">Lowest to highest</option>
+        </select>
+      </div>
+      <div style="height: dynamic; padding: 5px;"
+        class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4" id="produktLista">
+      </div>
+    </div>
+
+  </section>
+  <section id="sidebar">
+    <p class="textfont color6"> Home | <b class="textfont color6">All shoes</b></p>
+
+    <!-- Shopping page filter brands-->
+    <article>
+
+      <div class="border-bottom pb-2 ml-2">
+        <h4 class="titlefont color6">Filters</h4>
+      </div>
+
+      <div class="py-2 border-bottom ml-3">
+        <header class="card-header color5"> <a href="#" data-toggle="collapse" data-target="#collapse_aside1"
+            data-abc="true" aria-expanded="false" class="collapsed"> <i class="icon-control fa fa-chevron-down"></i>
+            <h6 class="title textfont">Brand </h6>
+          </a> </header>
+        <div class="filter-content collapse" id="collapse_aside1">
+          <div class="card-body">
+            <form>
+              <select id="brandFilter" class="sell_label textfont color6">
+                <option value="All">All</option>
+                <option value="Adidas">Adidas</option>
+                <option value="Nike">Nike</option>
+                <option value="New Balance">New Balance</option>
+              </select>
+            </form>
+
+
+          </div>
+    </article>
+    <!-- Shopping page - filter color-->
+    <article>
+
+      <div class="py-2 border-bottom ml-3">
+        <header class="card-header color5"> <a href="#" data-toggle="collapse" data-target="#collapse_aside2"
+            data-abc="true" aria-expanded="false" class="collapsed"> <i class="icon-control fa fa-chevron-down"></i>
+            <h6 class="title textfont">Color </h6>
+          </a> </header>
+        <div class="filter-content collapse" id="collapse_aside2">
+          <div class="card-body">
+            <form>
+              <select id="colorFilter" class="sell_label textfont color6">
+                <option value="All">All</option>
+                <option value="Red">Red</option>
+                <option value="Green">Green</option>
+                <option value="Yellow">Yellow</option>
+                <option value="Black">Black</option>
+                <option value="White">White</option>
+                <option value="Blue">Blue</option>
+              </select>
+            </form>
+
+
+          </div>
+    </article>
+
+    <!-- Shopping page - filter size -->
+    <article>
+
+      </div>
+    </article>
+
+    </div>
+    </article>
+
+    <article>
+
+      <div class="py-2 border-bottom ml-3">
+        <header class="card-header color5"> <a href="#" data-toggle="collapse" data-target="#collapse_aside3"
+            data-abc="true" aria-expanded="false" class="collapsed"> <i class="icon-control fa fa-chevron-down"></i>
+            <h6 class="title textfont">Size </h6>
+          </a> </header>
+        <div class="filter-content collapse" id="collapse_aside3">
+          <div class="card-body">
+            <form>
+              <select id="sizeFilter" class="sell_label textfont color6">
+                <option value="All">All</option>
+                <option value=20>20</option>
+                <option value=21>21</option>
+                <option value=22>22</option>
+                <option value=23>23</option>
+                <option value=24>24</option>
+                <option value=25>25</option>
+                <option value=26>26</option>
+                <option value=27>27</option>
+                <option value=28>28</option>
+                <option value=29>29</option>
+                <option value=30>30</option>
+                <option value=31>31</option>
+                <option value=32>32</option>
+                <option value=33>33</option>
+                <option value=34>34</option>
+                <option value=35>35</option>
+                <option value=36>36</option>
+                <option value=37>37</option>
+                <option value=38>38</option>
+                <option value=39>39</option>
+                <option value=40>40</option>
+                <option value=41>41</option>
+                <option value=42>42</option>
+                <option value=43>43</option>
+                <option value=44>44</option>
+                <option value=45>45</option>
+                <option value=46>46</option>
+                <option value=47>47</option>
+                <option value=48>48</option>
+                <option value=49>49</option>
+                <option value=50>50</option>
+                <option value=51>51</option>
+              </select>
+            </form>
+    </article>
+
+    <!-- Shopping page filter condition-->
+
+    </div>
+    </article>
+    <div class="py-2 border-bottom ml-3">
+      <header class="card-header color5"> <a href="#" data-toggle="collapse" data-target="#collapse_aside4"
+          data-abc="true" aria-expanded="false" class="collapsed"> <i class="icon-control fa fa-chevron-down"></i>
+          <h6 class="title textfont">Condition </h6>
+        </a> </header>
+      <div class="filter-content collapse" id="collapse_aside4">
+        <div class="card-body" id="filter-card">
+          <form>
+            <select id="conditionFilter" class="sell_label textfont color6">
+              <option value="All">All</option>
+              <option value="New">New</option>
+              <option value="Used">Used</option>
+              <option value="Poor">Poor</option>
+            </select>
+          </form>
+        </div>
+      </div>
+      </article>
+      <!-- Shopping page filter price-->
+
+    </div>
+    </article>
+    <div class="py-2 border-bottom ml-3">
+      <article class="filter-group color5">
+        <header class="card-header color5"> <a href="#" data-toggle="collapse" data-target="#collapse_aside5"
+            data-abc="true" aria-expanded="false" class="collapsed"> <i class="icon-control fa fa-chevron-down"></i>
+            <h6 class="title textfont">Price </h6>
+          </a> </header>
+        <div class="filter-content collapse" id="collapse_aside5">
+          <div class="card-body">
+            <div class="form-row">
+              <div class="form-group col-md-6 textfont color6"> <label>Min</label> <input class="form-control"
+                  placeholder=0 type="number" id="filterPriceMin"> </div>
+              <div class="form-group text-right col-md-6 textfont color6"> <label>Max</label> <input
+                  class="form-control" placeholder=30000 type="number" id="filterPriceMax"> </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <a href="#" class="highlight-button btn btn-medium button xs-margin-bottom-five textfont color3 color6" data-abc="true"
+      id="applyNowButton" onclick="filterSneakers()">Apply Now</a>
+    </div>
+  </script>
+
+
+  <!------------------------------------Shipping view ------------------------------>
+
+  <script id="view_shipping" type="text/html">
+    <h6 id="title_story" class="titlefont color6"> Shipping information</h6>
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="shipping_card" style="max-width: 80rem;">
+         <div class="card-body color3" id= "shipping_card">
+          <h5 class="card-title titlefont color6"> <img src="images/Icons/shipping.png"> Shipping your shoes</h5>
+          <p class="card-text textfont color6">It is the sellers responsibility to send the package and fill in order details of the package. 
+              We do not take responsibility for any mistakes made by seller. Make sure you get the right adress on the package, and use preferably
+              PostNord or DHL to make the shipping process as smooth as possible.
+          </p>
+         </div>
+        </div>
+      </div>
+      <div class="container px-4 px-lg-5 mt-5">
+        <div class="shipping_card" style="max-width: 80rem;">
+         <div class="card-body color3" id= "shipping_card">
+          <h5 class="card-title titlefont color6"> <img src="images/Icons/paket.png">   How to wrap your package like a champ.</h5>
+          <p class="card-text textfont color6" >Grab an old shoebox and wrap the shoes in some paper before you pack them down. 
+              Secure package with tape and cover up tears in old packaging. Wrap with plastic bag and secure with tape. All done!</p>
+         </div>
+        </div>
+      </div>
+      <div class="container px-4 px-lg-5 mt-5">
+        <div class="shipping_card" style="max-width: 80rem; position: relative;">
+         <div class="card-body color3" id= "shipping_card">
+          <h5 class="card-title titlefont color6" > <img src="images/Icons/check.png"> What is acceptable?</h5>
+          <p class="card-text textfont color6">Make sure to check all the boxes before you send you 
+              sneakers off to the new owner. You shall: 
+              Have a waterproof package, write the full adress of the recipient
+               clearly on the package, pack shoes in box to avoid damage.
+          </p>
+         </div>
+        </div>
+      </div>
+</script>
+
+
+
+  <!------------------------------- Shopping cart view--------------------------------->
+
+  <script id="view_cart" type="text/html">
+  <div class="container mt-5 mb-5">
+    <div class="d-flex justify-content-center row">
+      <div class="col-md-8">
+        <div class="p-2">
+          <h4 style="text-align: center;" class="titlefont color6">Shopping cart</h4>
+        </div>
+        <div id="dynamicCart">
+          <!--------------------här in appendas vårt innehål i carten------------------->
+        </div>
+        <div id="total_price">
+          <!--------appendar totalPrice-------->
+       </div>
+      </div> 
+    </div> 
+              <div class="d-flex flex-row align-items-center mt-3 p-2"><button
+                  onclick="showStripe()" 
+                  class="btn btn-outline-dark btn-block pay-button textfont color3 color6" class="nav-link" type="button">Proceed to
+                  Payment details</button></div>
+  </script>
+ 
+
+
+  <!------Modal for confirming adding sneaker to cart-------->
+
+  <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script som presenterar oss -->
+  <script id="view_team" type="text/html">
+    <h6 id="title_story" class="titlefont color6"> The Team  <img src="images/Icons/logotype_no_background.png" width="40px"/></h6>
+
+    <section>
+      <div class="container px-4 px-lg-5 mt-5" id="coworker">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+
+          <div class="col mb-5">
+            <div class="card h-100">
+              <!-- Coworker image-->
+              <img src="images/Team/footprint_hugo.jpg" class="team_picture" />
+              <!-- Coworker details-->
+              <div class="card-body p-4 color3">
+                <div class="text-center">
+                  <!-- Coworker name-->
+                  <h5 class="fw-bolder textfont color6">Hugo Björk</h5>
+                  <!-- Coworker title -->
+                  <p class="textfont color6">Back-end developer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col mb-5">
+            <div class="card h-100">
+              <!-- Coworker image-->
+              <img src="images/Team/footprint_axel.jpg" class="team_picture" />
+              <!-- Coworker details-->
+              <div class="card-body p-4 color3">
+                <div class="text-center">
+                  <!-- Coworker name-->
+                  <h5 class="fw-bolder textfont color6">Axel Andersson</h5>
+                  <!-- Coworker title-->
+                  <p class="textfont color6">Front-end developer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col mb-5">
+            <div class="card h-100">
+              <!-- Coworker image-->
+              <img src="images/Team/footprint_elly.jpg" class="team_picture" />
+              <!-- Coworker details-->
+              <div class="card-body p-4 color3">
+                <div class="text-center">
+                  <!-- Coworker name-->
+                  <h5 class="fw-bolder textfont color6">Elly Sjölund</h5>
+                  <!-- Coworker title -->
+                  <p class="textfont color6">Full-stack developer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col mb-5">
+            <div class="card h-100">
+              <!-- Coworker image-->
+              <img src="images/Team/footprint_rickard.jpg" class="team_picture" />
+              <!-- Coworker details-->
+              <div class="card-body p-4 color3" >
+                <div class="text-center">
+                  <!-- Coworker name-->
+                  <h5 class="fw-bolder textfont color6">Rickard Peters</h5>
+                  <!-- Coworker title-->
+                  <p class="textfont color6">Developer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col mb-5">
+            <div class="card h-100">
+              <!-- Coworker image-->
+              <img src="images/Team/footprint_christoph.jpg" class="team_picture" />
+              <!-- Coworker details-->
+              <div class="card-body p-4 color3">
+                <div class="text-center">
+                  <!-- Coworker name-->
+                  <h5 class="fw-bolder textfont color6">Christoph Kinnervall</h5>
+                  <!-- Coworker title -->
+                  <p class="textfont color6">Developer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col mb-5">
+            <div class="card h-100">
+              <!-- Coworker image-->
+              <img src="images/Team/footprint_filip.jpg" class="team_picture" />
+              <!-- Coworker details-->
+              <div class="card-body p-4 color3">
+                <div class="text-center">
+                  <!-- Coworker name-->
+                  <h5 class="fw-bolder textfont color6">Filip Killberg</h5>
+                  <!-- Coworker title -->
+                  <p class="textfont color6">Developer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col mb-5">
+            <div class="card h-100">
+              <!-- Coworker image-->
+              <img src="images/Team/footprint_alice.jpg" class="team_picture" />
+              <!-- Coworker details-->
+              <div class="card-body p-4 color3">
+                <div class="text-center">
+                  <!-- Coworker name-->
+                  <h5 class="fw-bolder textfont color6">Alice Paulsen</h5>
+                  <!-- Coworker title-->
+                  <p class="textfont color6">Scrum master</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col mb-5">
+            <div class="card h-100">
+              <!-- Coworker image-->
+              <img src="images/Team/footprint_martin.jpeg" class="team_picture" />
+              <!-- Coworker details-->
+              <div class="card-body p-4 color3">
+                <div class="text-center">
+                  <!-- Coworker name-->
+                  <h5 class="fw-bolder textfont color6">Martin Hörnberg</h5>
+                  <!-- Coworker price-->
+                  <p class="textfont color6">Developer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </script>
+
+  <script id="view_sell" type="text/html">
+    <div id="sell_div" class="color3 pt-5">
+        <h3 id="sell_header" class="titlefont color6 center">Sell your sneakers!</h3>
+        <form >
+          <div class="form-outline mb-4 ">      
+            <label class="sell_label textfont color6 pr-5 pl-5 " for="sellModel"> Model</label>
+            <input type="text" id="sellModel" class="sell_inputs textfont" />
+          </div>
+  
+          <div class="form-outline mb-4" >
+            <label class="sell_label textfont color6 pr-5 pl-5" for="sellConditiion">Condition</label>
+            <select id="sellCondition" class="textfont color6 sell_inputs right-4">
+              <option value="New">New</option>
+              <option value="Used">Used</option>
+              <option value="Poor">Poor</option>
+            </select>
+          </div>
+          <div class="form-outline mb-4" >
+            <label class="sell_label textfont color6 pr-5 pl-5" for="sellEmail">Brand</label>
+            <select id="sellBrand" class="textfont color6 sell_inputs">
+              <option value="Nike">Nike</option>
+              <option value="Adidas">Adidas</option>
+              <option value="Vagabond">Vagabond</option>
+              <option value="New Balance">New Balance</option>
+            </select>
+          </div>
+          <div class="form-outline mb-4 ">
+            <label class="sell_label textfont color6 pr-5 pl-5" for="sellDesc">Description</label>
+            <input type="text" id="sellDesc" class="sell_inputs textfont"  />
+          </div> 
+          <div class="form-outline mb-4 ">
+            <label class="sell_label textfont color6 pr-5 pl-5" for="sellCategory">Category</label>
+            <input class="genderSelect textfont color6" type="radio" onclick="menSizeSelect()" name="genderRadio" value="male"> Male
+            <input class="genderSelect textfont color6" type="radio" onclick="womenSizeSelect()" name="genderRadio" value="female"> Female
+            <input class="genderSelect textfont color6" type="radio" onclick="childSizeSelect()" name="genderRadio" value="child"> Child
+          </div>
+          <div class="form-outline mb-4 ">
+            <label class="sell_label textfont color6 pr-5 pl-5" for="sellSize">Size</label>
+            <select id="sellSize" class="textfont color6 sell_inputs"><option value = "">Please select a category</option></select>
+          </div>
+          <div class="form-outline mb-4" >
+            <label class="sell_label textfont color6 pr-5 pl-5" for="sellPrice">Price</label>
+            <input type="number" min="0" step="1" placeholder="SEK" id="sellPrice" class="sell_inputs textfont color6"  />
+          </div>
+          <div class="form-outline mb-4" >
+            <label class="sell_label textfont color6 pr-5 pl-5" for="sellColour">Colour</label>
+            <select id="sellColour" class=" textfont color6 sell_inputs">
+              <option value="White">White</option>
+              <option value="Black">Black</option>
+              <option value="Blue">Blue</option>
+              <option value="Red">Red</option>
+              <option value="Green"> Green</option>
+              <option value="Yellow">Yellow</option>
+            </select>
+          </div>
+          <div class="form-outline mb-4" >
+              <input type="file" style="font-size: small;"id="sellImage1" name = "image1" class="sell_div_items"/>
+          </div>
+          
+        </form> 
+        <div class="d-flex justify-content-center pb-5">
+          <button class="btn btn-success btn-block btn-lg gradient-custom-4 text-body textfont color1 color2" style="width: 40%; margin-bottom: 1%;"
+            onclick="addingSneaker()">Submit</button>
+        </div> 
+        </div>
+  </script>
+
+  <!--contactform view-->
+
+  <script id="view_contactUs" type="text/html">
+  
+  <section class="mb-4 color0" id="contact-view">
+    <h2 id="contact-title" class="titlefont text-center margin-top color6">Contact us</h2>
+    <p class="textfont text-center w-responsive mx-auto mb-5 color6">Do you have any questions? Please do not hesitate
+      to
+      contact us directly. Our team will come back to you within
+      a matter of hours to help you.</p>
+    <div class="row color0" id="contact-row">
+      <div class="col-md-6">
+        <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="md-form mb-0 color6 textfont">
+                <label class="textfont" for="name">Name</label>
+                <input type="name" id="name" name="name" class="form-control" placeholder="Your name">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="md-form mb-0 color6 textfont">
+                <label id="form-text" for="email">E-mail</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="name@email.com">
+                <small id="form-text" id="emailHelp" class="form-text text-muted textfont color6">We'll never share your
+                  email with anyone
+                  else.</small>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div id="contact-subject" class="md-form mb-0 color6 textfont">
+                <label id="form-text" for="contact-subject">What do you need help with?</label>
+                <select class="custom-select mr-sm-2 color6 textfont" id="contact-subject">
+                  <option selected>Category..</option>
+                  <option value="1">Billing</option>
+                  <option value="2">Delivery</option>
+                  <option value="3">Selling</option>
+                  <option value="4">Buying</option>
+                </select>
+
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="md-form color6 textfont">
+                <label id="form-text" for="message">Your message</label>
+                <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <div class="text-center text-md-left" id="contact-form">
+          <label for="message"> </label>
+          <a class="btn btn-outline-dark btn-lg btn-block color1 color2 textfont">Send</a>
+
+        </div>
+      </div>
+      <div id="line-contact">
+      </div>
+      <div class="col-md-3 text-center" id="contact-info">
+        <ul class="list-unstyled mb-0">
+          <li><img src="images/Icons/location2.png">
+            <p class="textfont color6">Linköping, Sweden</p>
+          </li>
+
+          <li><img src="images/Icons/call.png">
+            <p class="textfont color6">+46 73 133 73 37</p>
+          </li>
+
+          <li><img src="images/Icons/mail.png">
+            <p class="textfont color6">contact@footprint.se</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <h3 id="learn-more" class="titlefont text-center color6">Want to learn more about us?</h3>
+  <div class="row" id="learn-more-div">
+    <div class="color0">
+      <img src="images/Contact/our_team.png" class="color0" id="team-contact" onclick="showTheTeam()">
+    </div>
+    <div id="story-contact-div">
+    </div>
+    <div class="color0">
+      <img src="images/Contact/our_story.png" class="color0" id="story-contact" onclick="showOurStoryView()">
+    </div>
+  </div>
+  </script>
+
+
+
+  <!-- register view-->
+  <script id="view_register" type="text/html">
+    <section class="vh-200 vw-100 bg-image">
+      <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100" style="margin-top: 3vh;">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+              <div class="card pt-1" id="registerBox"style="border-radius: 15px;">
+                <div class="card-body p-5">
+                  <h2 class="titlefont color6 text-center text-uppercase pb-5">Create an account</h2>
+
+                  <form>
+
+                    <div class="form-outline mb-4">
+                      <input type="text" id="inputSignUpName" class="form-control form-control-lg" />
+                      <label class="form-label textfont" for="inputSignUpName">Your Name</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input type="email" id="inputSignUpEmail" class="form-control form-control-lg" />
+                      <label class="form-label textfont" for="inputSignUpEmail">Your Email</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input type="password" id="passwordInput1" class="form-control form-control-lg" />
+                      <label class="form-label textfont" for="passwordInput1">Password</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input type="password" id="inputSignUpPassword" class="form-control form-control-lg" />
+                      <label class="form-label textfont" for="inputSignUpPassword">Repeat your password</label>
+                    </div>
+
+                    <div class="form-check d-flex justify-content-center mb-5">
+                      <input class="form-check-input me-2 textfont" type="checkbox" value="" id="registerCheckbox" />
+                      <label class="form-check-label textfont" for="registerCheckbox">
+                        I agree to <a href="#!" class="text-body textfont"><u> terms of service</u></a>
+                      </label>
+                    </div>
+
+                    <div class="d-flex justify-content-center">
+                      <button type="button" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body textfont"
+                        onclick="signUp()">Register</button>
+                    </div>
+
+                    <p class="text-center text-muted mt-5 mb-0 textfont" >Already have an account? </p>
+                    <button type="button" onclick="showLogInView()"
+                      class="btn btn-outline-dark btn-block btn-lg gradient-custom-4 text-body textfont color3 color6" >Log In</button>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </script>
+
+  <!-- Login view Filip och Christoph-->
+  <script id="view_login" type="text/html">
+    <div id="login_container">
+      <img src="images/Icons/logotype_no_background.png" id="login-logo-footprint">
+      <form>
+        <!-- Email input -->
+        <div class="form-outline mb-4">
+          <input type="email" id="inputLogInEmail" class="form-control textfont" />
+          <label class="form-label textfont" for="inputLogInEmail">Email address</label>
+        </div>
+
+        <!-- Password input -->
+        <div class="form-outline mb-4">
+          <input type="password" id="inputLogInPassword" class="form-control textfont" />
+          <label class="form-label textfont" for="inputLogInPassword">Password</label>
+        </div>
+
+        <!-- 2 column grid layout for inline styling -->
+        <div class="row mb-4">
+          <div class="col d-flex justify-content-center">
+            <!-- Checkbox -->
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+              <label class="form-check-label textfont" for="form2Example31"> Remember me </label>
+            </div>
+          </div>
+
+          <div class="col">
+            <!-- Simple link -->
+            <a href="#!" class="textfont">Forgot password?</a>
+          </div>
+        </div>
+
+        <!-- Submit button -->
+        <button type="button" onclick="logIn()" class="btn btn-outline-dark btn-block btn-lg ml-2 pay-button textfont color3 color6">Log
+          in</button>
+
+        <!-- Register buttons -->
+        <div class="text-center">
+          <p class="textfont"><br>Not a member? </p>
+          <button type="button" onclick="showRegisterView()"
+            class="btn btn-outline-dark btn-block btn-lg ml-2 pay-button textfont color3 color6">Register</button>
+            
+        </div>
+      </form>
+    </div>
+  </script>
+
+  <!-- Receipt view -->
+  <script id="view_receipt" type="text/html">
+    <h6 id="title_story" class="titlefont color6"> Your receipt</h6>
+
+
+    <div class="card">
+                
+      <div class="card-body color0">
+       
+        <h2 id="title_story" class="titlefont color6">Thank you for contributing to a sustainable future! <br> Your order is on it's way </h2>
+          
+          <div id="content">
+              <ul class="timeline grey_box color3">
+
+                <strong id="order_number_text" class="textfont" style="margin-left: 50%; transform: translate(-50%);"></strong> 
+                
+                <div class="row">
+                 
+                  
+                  <div id= "dynamicName" class="column">
+                    <p class="column_title textfont">Product</p>
+                  </div>
+
+                  <div id="dynamicArticleNumber" class="column" style="margin-left: 50px;">
+                    <p class="column_title textfont fw-bolder">Article nr</p>
+                  </div>
+
+                  <div id= "dynamicPrice" class="column" style="margin-left: 50px;">
+                    <p class="column_title textfont fw-bolder"> Price</p>
+                  </div>
+                  <div id= "dynamicPic" class="column" style="margin-left: 50px;">
+                    <p class="column_title textfont fw-bolder"> Picture</p>
+
+                  </div>
+
+                </div>
+    
+                <strong id="total_price_text" class="textfont" style="margin-left:60%;"></strong> 
+                <li>
+                  <button type="button" onclick="showAccount()" class="btn btn-outline-dark btn-block btn-lg ml-2 pay-button textfont color3 color6">Continue shopping</button>
+                  
+                <!-- <a class ="shop textfont fw-bolder" style="color:black;" onclick= "showAccount()" href="#"><br>Continue shopping <span class="sr-only">(current)</span></a> -->
+                </li> 
+                   
+                  
+              </ul>
+            </div>
+          </div>
+        </div>
+ 
+
+  </script>
+
+
+  <!-- Account view -->
+  <script id="view_account" type="text/html">
+    <div id="Account_div">
+      <div id="Account_left" class="color3">
+        <div name="profile_pic" id="profile_pic" src="images/Icons/no_profile_picture.png"></div>
+        <p class="textfont color6" id="account_view_name_text"></p>
+        <div id="Account_left_sub">
+          <p class="textfont color6" style="font-size: 3vh;" id="member_since_text"></p>
+          <p class="textfont color6" style="font-size: 3vh;" id="shoes_sold_text"></p>
+          <p class="textfont color6" style="font-size: 3vh;" id="shoes_purchased_text"></p>
+          <button type="button" id="edit_profile_button" class="color2" data-toggle="modal" data-target="#editProfileModal">
+            <p class="textfont color1">Edit profile</p>
+          </button>
+        </div>
+      </div>
+      <div id="Account_middle">
+        <button type="button" class="account_middle_buttons color2">
+          <img src="images/icons/running-shoes-8592.png" onclick="showAccount()" class="account_button_logo">
+          <p class="account_button_text textfont color1">My ads</p>
+        </button>
+        <button type="button" class="account_middle_buttons color2">
+          <img src="images/Icons/running_shoe_icon.png" onclick="showOrderHistory()" class="account_button_logo">
+          <p class="account_button_text textfont color1">Order History</p>
+        </button>
+        <button type="button" class="account_middle_buttons color2">
+          <img src="images/Icons/shipping_smal.png" onclick="ordersToShip()" class="account_button_logo">
+          <p class="account_button_text textfont color1">Sold and ready to ship</p> 
+        </button>
+        <button type="button" onclick="logOut()" class="account_middle_buttons color2">
+          <img src="" class="account_button_logo">
+          <p class="account_button_text textfont color1">Log out</p>  
+        </button>
+      </div>
+      <div id="Account_right" class="color3"> 
+        <div id="Account_right_sub"> 
+          <div id="annonsListaDiv"> 
+            <table id="annonsLista">
+
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Account view model edit profile -->
+    <div class="modal fade" id="editProfileModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Edit profile</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label textfont">Change name</label>
+                <input type="text" class="form-control" id="recipient-name" placeholder=>
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="col-form-label textfont">Change description</label>
+                <textarea class="form-control" id="message-text"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="profilePicture" class="col-form-label textfont">Change profile picture</label>
+
+                <div class="form-outline mb-4" >
+                  <input type="file" style="font-size: x-small;"id="profilePicture" name = "profilePicture" class="sell_inputs center textfont"/>
+              </div>
+              </div>
+            </form>
+
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="editProfileModalButton" data-dismiss="modal" onclick="editProfile()" class="btn btn-primary">
+              <p class="account_button_text">Save changes</p>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </script>
+
+  <!-------------------- Sustainability view ------------------------------------------->
+
+
+  <script id="view_sustainability" type="text/html">
+    <h6 id="title_story" class="titlefont color6"> Sustainability at FootPrint</h6>
+    <div class="container px-4 px-lg-5 mt-5">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card" id= "sustainability_card">
+          <div class="card-body color3">
+            <h5 class="fw-bolder textfont color6"><img src="images/Icons/forever.png"> Longer lifetime </h5>
+            <p class="textfont color6">With FootPrint you can sell your pre-loved sneakers - so that its new 
+              owner can enjoy them as much as you first did and extend the lifetime of the sneakers.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card" id= "sustainability_card">
+          <div class="card-body color3" >
+            <h5 class="fw-bolder textfont color6"><img src="images/Icons/recycling.png"> Recycling</h5>
+            <p class="textfont color6">Reduced waste is a big part of the solution to environmental issues. 
+              To sell your sneakers instead of throwing them out will contribute to this.
+
+                
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6" style="padding-top: 30px;">
+        <div class="card" id= "sustainability_card">
+          <div class="card-body color3">
+            <h5 class="fw-bolder textfont color6"><img src="images/Icons/leaf.png"> Reduced CO2 Footprint</h5>
+            <p class="textfont color6">The amount of carbon dioxide produced when producing new sneakers is more than you would think.
+              A new pair of sneakers produced in synthetic materials will generate a 14 ± 2.7 kg carbon dioxide equivalent.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6" style="padding-top: 30px;">
+        <div class="card" id= "sustainability_card" >
+          <div class="card-body color3">
+            <h5 class="fw-bolder textfont color6"><img src="images/Icons/water.png"> Saving water</h5>
+            <p class="textfont color6">When producing a new pair of sneakers it takes approximately 8,5 litres of water. 
+              When buying second hand sneakers we save water by chosing a more sustainable way of consuming.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+          <video class="d-block w-100" style="padding: 50px;" muted loop autoplay>
+          <source src="images/Design/recycle.mp4" type="video/mp4">
+          <source src="movie.ogg" type="video/ogg">
+          Your browser does not support the video tag.
+        </video>
+
+  
+  </script>
+
+  <!-- view stripe-->
+  <script id="view_stripe" type= "text/html">
+     <div class="row mt-3 mx-3" style="margin-top:25px ;">
+         <div class="center">
+           <div class="card card-custom pb-4" style="background-color: white;">
+
+
+             <div class="card-body mt-0 mx-5">
+               <div id="titlefont" class="text-center pb-4 ">
+                 <h4 style="color: #495057 ;">Delivery Details</h4>
+               </div>
+               <div id="textfont" class="text-center pb-4 ">
+                <h4 style="color: #495057 ; font-size: small; font-weight: 300;">Please enter your delivery details. For more information regarding shipping </h4>
+                <h4 onclick="showShippingView()"style="color: #495057 ; font-size: small; ">click here.</h4>
+
+              </div>
+  
+               <form class="mb-0">
+                 <div class="row mb-4">
+                   <div class="col">
+                     <div class="form-outline">
+                       <input type="text" id="city" class="form-control input-custom textfont" />
+                       <label class="form-label textfont" for="form9Example3">City</label>
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="form-outline">
+                       <input type="text" id="zip_code" class="form-control input-custom textfont"  placeholder="123 45"/>
+                       <label class="form-label textfont" for="form9Example4">Zip</label>
+                     </div>
+                   </div>
+                 </div>
+                 <div class="row mb-4">
+                   <div class="col">
+                     <div class="form-outline">
+                       <input type="text" id="shipping_address" class="form-control input-custom" />
+                       <label class="form-label textfont" for="form9Example6">Address</label>
+                     </div>
+                   </div>
+                   <div class="col">
+                     <div class="form-outline">
+                       <input type="email" id="phone_number" class="form-control input-custom textfont"placeholder="+46700000000" />
+                       <label class="form-label textfont" for="typeEmail">Phone number</label>
+                     </div>
+                   </div>
+                 </div>
+  
+               </form>
+             </div>
+           </div>
+         </div>
+       </div>
+
+
+       
+    <div id = "kortbetalningsrutorna" style= "margin-top: 30px;" >
+     
+
+  <form id="payment-form" style="background-color: white;" >
+    <div id="titlefont" class="text-center pb-4 ">
+      <h4 style="color: #495057 ;">Pay with card</h4>
+    </div>
+    <!-- Payment knapp -->
+    <div id="payment-element">
+    </div>
+    <button style="background-color: #5D7583;" id="submit" onclick="handleSubmit()">
+      <div class="spinner hidden2" id="spinner"></div>
+      <span style="color:#9FB1BC" id="button-text">Pay now</span>
+    </button>
+    <div id="payment-message" class="hidden2"></div>
+  </form>
+</div>
+
+</script>
+  <!-- view_stripe-->
+
+
+  <!----------------------- Botten-panelen -------------------------------------------->
+  <div id="bottom_panel" class="color2">
+    <div id="listcontainer">
+      <!--Rubriker bottenpanel -->
+      <ul class="textfont color4" id="floatingcolumn-head">Products</ul>
+      <ul class="textfont color4" id="floatingcolumn-head">Get Help</ul>
+      <ul class="textfont color4" id="floatingcolumn-head">About us</ul>
+      <!--Rad1 bottenpanel -->
+      <ul id="women_link" class="floatingcolumn textfont color1"> <a class="bottom_panel_link color4" id="link_women"
+          href="#">Women<span class="sr-only">(current)</span></a></ul>
+
+      <ul id="contact_us" class="floatingcolumn textfont color1"><a class="bottom_panel_link color4" id="link_contact_us"
+          href="#">Contact
+          us<span class="sr-only">(current)</span></a></ul>
+
+      <ul id="our_story" class="floatingcolumn textfont color1"><a class="bottom_panel_link color4" id="link_our_story"
+          href="#">Our
+          story<span class="sr-only">(current)</span></a></ul>
+
+      <!--Rad2 bottenpanel -->
+      <ul id="men_link" class="floatingcolumn textfont color1"><a class="bottom_panel_link color4" id="link_men"
+          href="#">Men<span class="sr-only">(current)</span></a></ul>
+
+      <ul id="shipping" class="floatingcolumn textfont color1"><a class="bottom_panel_link color4" id="link_shipping"
+          href="#">Shipping<span class="sr-only">(current)</span></a></ul>
+
+      <ul id="sustainability" class="floatingcolumn textfont color1"><a class="bottom_panel_link color4"
+          id="link_sustainability" href="#">Sustainability<span class="sr-only">(current)</span></a></ul>
+
+      <!--Rad3 bottenpanel -->
+      <ul id="kids_link" class="floatingcolumn textfont color1"><a class="bottom_panel_link color4" id="link_kids"
+          href="#">Kids<span class="sr-only">(current)</span></a></ul>
+            
+          <!--Receipt används inte just nu -->
+
+      <ul id="receipt" class="floatingcolumn textfont color1"><a class="bottom_panel_link color4" id="link_order_tracker"
+          href="#"> <span class="sr-only">(current)</span></a></ul>
+
+
+      <ul id="the_team" class="floatingcolumn textfont color1"><a class="bottom_panel_link color4" id="link_the_team"
+          href="#">The team<span class="sr-only">(current)</span></a></ul>
+    </div>
+  </div>
+
+
+
+  <!-- Footer -->
+
+  <footer class="footer color3">
+    <div class="footerContainer">
+      <p id="copyright" class="textfont color4">© FootPrint 2022</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
